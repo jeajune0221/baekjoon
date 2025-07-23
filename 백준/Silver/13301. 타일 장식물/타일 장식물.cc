@@ -1,18 +1,20 @@
 #include <stdio.h>
-long long fibo(int n)
-{
-    static long long arr[50] = {1, 2};
-    if (n <= 1)
-        return arr[n];
-    if (arr[n])
-        return arr[n];
-    arr[n] = fibo(n - 1) + fibo(n - 2);
-    return arr[n];
+
+long long int be[10000] = {0, };
+
+long long int fibo(int c){
+    if(c < 2){
+        be[c] = c;
+        return be[c];
+    }
+    if(be[c] != 0) return be[c];
+    be[c] = fibo(c-1) + fibo(c-2);
+    return be[c];
 }
-int main(void)
-{
-    int n;
-    scanf("%d", &n);
-    printf("%lld", fibo(n) * 2);
-    return 0;
+
+int main() {
+    long long num;
+    scanf("%lld", &num);
+    fibo(num);
+    printf("%lld", be[num]*4 + be[num-1]*2);
 }

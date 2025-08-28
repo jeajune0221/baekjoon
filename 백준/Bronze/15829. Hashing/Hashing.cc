@@ -1,19 +1,19 @@
 #include <stdio.h>
 int main(void)
 {
-    char str[51];
-    int n;
-    scanf("%d", &n);
+    char str[55];
+    int t;
+    scanf("%d", &t);
     scanf("%s", str);
-    n = 1;
+    unsigned long long n = 1;
     int m = 1234567891;
     unsigned long long sum = 0;
     for (int i = 0; str[i] != '\0'; i++)
     {
-        sum += (str[i] - 'a' + 1) * n;
+        sum += ((str[i] - 'a' + 1) * n) % m;
         n = (n * 31) % m;
         sum %= m;
     }
-    printf("%lld", sum);
+    printf("%llu", sum);
     return 0;
 }

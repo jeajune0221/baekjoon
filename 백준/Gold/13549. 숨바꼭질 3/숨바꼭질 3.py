@@ -18,9 +18,6 @@ else:
         elif n1+1 == m or n1-1 == m:
             print(t+1)
             break
-
-        
-        
         if 0 <= n1*2 <= 100000 and not visted[n1*2]:
             dequ.appendleft((n1*2,t))
             visted[n1*2] = 1

@@ -1,13 +1,12 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 int main(void){
     int n;
-    cin>>n;
-    for(int i = n; i > 0; i--){
-        for(int j = 0; j < i; j++){
-            cout<<"*";
+    scanf("%d",&n);
+    for(int i = n-1 ; i >= 0; i--){
+        for(int j = 0; j < i+1; j++){
+            printf("*");
         }
-        cout<<endl;
+        printf("\n");
     }
-    
+    return 0;
 }
